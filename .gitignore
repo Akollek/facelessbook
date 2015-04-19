@@ -1,0 +1,7 @@
+*.out
+*.pyc
+*.cgi
+*.swp
+*.key
+cgi-bin/auth/auth.py
+cgi-bin/auth/auth2.py

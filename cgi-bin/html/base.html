@@ -1,0 +1,65 @@
+
+<html>
+        <body bgcolor=#34A085>
+                <p><center>
+                <h1> <font color=#FFD768> FacelessBook </font></h1><br>
+		<h3><font color=#5D1B7C>Hello {user}!<br></font></h3>
+                        <form action="../auth/logout.py" method="post">
+                                <input type="hidden" name="user" value="{user}">
+                                <input type="submit" value="Logout">
+                        </form>
+                <br></center>
+                </p>
+
+                <p> 
+                      <center>  <h4> <font color=#ff0000> {message} </font> </h4> </center>
+                </p>
+
+                <p>
+                <h2> Members </h2> (<font color=#ff0000> Red </font>members are your friends already) <br> 
+                <ul>
+                        {members}
+                </ul>
+                </p>
+
+<center>
+<p>
+	<table bgcolor=#DEB136>
+		<tr>
+		<td>
+                <form action="./add_friend.py" method="post">
+                        <p> <font color=#5D1B7C> Want to add a friend? </font> </p>
+                        <input type="hidden" name="user" value="{user}">
+                        <input type="hidden" name="key" value="{key}">
+                        <p> <font color=#5D1B7C> User: </font> <input type="text" name="friend" size= 40><br> <input type="submit" value="Add"></p>
+			
+                </form>
+		</td>
+		<td>
+     	         <form action="./post.py" method="post" id="postitem">
+                         <input type="hidden" name="user" value="{user}">
+                         <p> <font color=#5D1B7C> Want to make a post? </font> </p>
+                         <p> <font color=#5D1B7C> Image URL: </font> <input type="text" name="image" size=50><br>
+                         <p> <font color=#5D1B7C> Comment: </font> <textarea form="postitem" name="comment" cols="40" rows="4"></textarea><br>
+				<input type="submit" value="Post"></p>
+                         <input type="hidden" name="key" value="{key}">
+                 </form>
+		</td></tr>
+                </p>
+</center>
+                 <p>	<center>
+			<table border=0 bgcolor=#DEB136>
+                         {feed}
+	                 </table>
+			</center>
+		</p>
+
+                 <p>
+                        <form action="more.py" method="post">
+                                <input type="hidden" name="user" value="{user}">
+                                <input type="hidden" name="items" value="{items}">
+                                <input type="{submit}" value="More items">
+                                <input type="hidden" name="key" value="{key}">
+                        </form>
+         </body>
+ </html>
